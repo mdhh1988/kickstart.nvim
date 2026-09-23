@@ -357,10 +357,13 @@ do
 
   -- CopilotChat
   vim.pack.add { gh 'CopilotC-Nvim/CopilotChat.nvim' }
-  require("CopilotChat").setup{
-    {
-      model = ''
-    }
+  require("CopilotChat").setup {
+    -- 把 copilot 组工具永久暴露给模型（含 bash/edit/file/glob/grep/gitdiff）
+    tools = { 'copilot' },
+    -- 跳过所有手动确认
+    trusted_tools = true,
+    -- 失败的工具不要中断整轮处理
+    stop_on_function_failure = false,
   }
   -- Here is a more advanced configuration example that passes options to `gitsigns.nvim`
   --
