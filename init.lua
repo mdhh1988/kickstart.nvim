@@ -346,6 +346,22 @@ do
   vim.pack.add { gh 'NMAC427/guess-indent.nvim' }
   require('guess-indent').setup {}
 
+  -- plenary
+  vim.pack.add { gh 'nvim-lua/plenary.nvim' }
+  require('plenary')
+
+
+  -- Copilot
+  vim.pack.add { gh 'zbirenbaum/copilot.lua' }
+  require('copilot').setup {}
+
+  -- CopilotChat
+  vim.pack.add { gh 'CopilotC-Nvim/CopilotChat.nvim' }
+  require("CopilotChat").setup{
+    {
+      model = ''
+    }
+  }
   -- Here is a more advanced configuration example that passes options to `gitsigns.nvim`
   --
   -- See `:help gitsigns` to understand what each configuration key does.
